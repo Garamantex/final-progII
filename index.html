@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Productos</h1>
+        <div class="row">
+            <!-- Producto 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="http://placekitten.com/300/300" class="card-img-top" alt="Producto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 1</h5>
+                        <p class="card-text">Descripción del producto 1.</p>
+                        <p class="card-text">Precio: $100</p>
+                        <p class="card-text">Cantidad: <input type="number" id="cantidadProducto1" value="1"></p>
+                        <a href="#" class="btn btn-primary" onclick="agregarAlCarrito(1, 'Producto 1', 100)">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="http://placekitten.com/300/300" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 2</h5>
+                        <p class="card-text">Descripción del producto 2.</p>
+                        <p class="card-text">Precio: $200</p>
+                        <p class="card-text">Cantidad: <input type="number" id="cantidadProducto2" value="1"></p>
+                        <a href="#" class="btn btn-primary" onclick="agregarAlCarrito(2, 'Producto 2', 200)">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="http://placekitten.com/300/300" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 3</h5>
+                        <p class="card-text">Descripción del producto 3.</p>
+                        <p class="card-text">Precio: $300</p>
+                        <p class="card-text">Cantidad: <input type="number" id="cantidadProducto3" value="1"></p>
+                        <a href="#" class="btn btn-primary" onclick="agregarAlCarrito(3, 'Producto 3', 300)">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="http://placekitten.com/300/300" class="card-img-top" alt="Producto 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 4</h5>
+                        <p class="card-text">Descripción del producto 4.</p>
+                        <p class="card-text">Precio: $400</p>
+                        <p class="card-text">Cantidad: <input type="number" id="cantidadProducto4" value="1"></p>
+                        <a href="#" class="btn btn-primary" onclick="agregarAlCarrito(4, 'Producto 4', 400)">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <h2>Carrito de Compras</h2>
+        <div id="carrito-list">
+            <!-- Esta sección se actualizará dinámicamente con JavaScript -->
+            <p>El carrito está vacío.</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Agrega un formulario para los datos de entrega -->
+        <form id="datos-entrega-form" style="display: none;">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección de Entrega:</label>
+                <input type="text" class="form-control" id="direccion" placeholder="Dirección de Entrega">
+            </div>
+        </form>
+
+        <!-- Botón para realizar el pedido -->
+        <button class="btn btn-success" onclick="realizarPedido()" id="realizar-pedido-btn" style="display: none;">Realizar Pedido</button>
+    </div>
+
+    <!-- Modal Bootstrap -->
+    <div class="modal fade" id="resumenPedidoModal" tabindex="-1" role="dialog" aria-labelledby="resumenPedidoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumenPedidoModalLabel">Resumen del Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- El contenido del resumen del pedido se actualizará dinámicamente aquí -->
+                    <p><strong>Total:</strong> $<span id="totalPedido"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

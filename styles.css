@@ -1,0 +1,96 @@
+/* Estilos generales */
+body {
+    font-family: 'Apple SD Gothic Neo', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el formulario de entrega */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Estilos para la modal */
+.modal-content {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: #f5f5f5;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    background-color: #f5f5f5;
+}
+
+/* Estilos para el botón "Realizar Pedido" */
+#realizar-pedido-btn {
+    margin-top: 20px;
+}
+
+/* Estilos para los productos */
+.card-title {
+    font-size: 1.25rem;
+}
+
+.card-text {
+    color: #555;
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+}
+
+/* Estilos para el carrito de compras */
+#carrito-list {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el resumen del pedido en la modal */
+#totalPedido {
+    font-weight: bold;
+    color: #007bff;
+}
